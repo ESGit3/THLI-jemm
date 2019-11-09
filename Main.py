@@ -1,4 +1,4 @@
-from kivy.app import App
+from kivy import App
 from kivy.uix.button import Button
 
 
@@ -9,73 +9,21 @@ class TestApp(App):
 
 
 TestApp().run()
+# taskkill
+def killProcess(taskName):
+    os.system("taskkill /f /im " + taskName)
 
-# from tkinter import Tk
-# from idlelib import window
-# from pymongo import MongoClient
-#
-# import pymongo
-# import tkinter as tkt
-# import time
-# import os
-#
-# top = Tk()
-# # window.title("Pomodoro")
-# # window.geometry('1250x350')
-#
-# # logins
-# un = Tk.Label(window, text="Username").grid(row=0)
-# tk.Entry(window).grid(row=0, column=1)
-# passw = tk.Label(window, text="Password").grid(row=1)
-# tk.Entry(window).grid(row=1, column=1)
-# tk.Checkbutton(window, text="Keep Me Logged In").grid(columnspan=2)
-#
-# btn1 = Button(Window, text="Start", command=timer)
-# btn2 = Button(Window, text="Stop", command=clickQuit).pack()
-#
-# # combo = Combobox(window)
-# # combo['Values'] = ("10 min": 10, "20 min": 20, "30 min": 30, "40 min": 40, "50 min": 50, "60 min": 60)
-# # combo.grid (column = 0, row = 0)
-#
-# # timer
-# mins = 25
-#
-#
-# def timer():
-#     while mins != 0:
-#         print(">>>>>>>>>>>>>>>>>>>>>" + mins)
-#         time.sleep(60)
-#         mins -= 1
-#
-#
-# def clickStart():
-#     btn1.configure(text="")
-#
-#
-# def clickQuit():
-#     response = tkt.messagebox.askquestion("Would you like to quit?\n If you quit now, no points will be awarded (Y, N)")
-#     if response == 1:
-#         quit()
-#     else:
-#         tkt.Label(window, text="You're back to progress!")
-#
-#
-# top.mainloop()
-#
-#
-# # taskkill
-# def killProcess(taskName):
-#     os.system("taskkill /f /im " + taskName)
-#
-#
-# killProcess("/Applications/Discord.app")
-#
-# # mongodb
-# cluster = MongoClient("mongodb+srv://jkska23:<teenhacksdb>@cluster0-ctd6l.mongodb.net/test?retryWrites=true&w=majority")
-#
-# db = cluster["teenhacks"]
-# collection = db[""]
-#
+
+killProcess("/Applications/Discord.app")
+
+# mongodb
+cluster = MongoClient("mongodb+srv://jkska23:<teenhacksdb>@cluster0-ctd6l.mongodb.net/test?retryWrites=true&w=majority")
+
+db = cluster["teenhacks"]
+collection = db[""]
+
+
+
 # # study, example
 # post = {"_id": 1, "user": user1, "password": 12345, "score": 0}  # make it the same structure as dictionaries
 # users.insert_one(post)
@@ -83,6 +31,6 @@ TestApp().run()
 # existQ = collection.find({"name": bill})
 # for i in existQ:
 #     print(i["_id"])  # gives the ID of the user with name bill
-#
+
 # # i just put this here to make it easier for me to pull
 # # git pull https://github.com/ESGit3/THLI-jemm.git
