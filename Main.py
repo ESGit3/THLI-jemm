@@ -44,7 +44,7 @@ def clickQuit():
     else:
         tkt.Label(window, text = "You're back to progress!")
 
-#calculator; we'll work on it later
+
 
 top.mainloop()
 
