@@ -17,7 +17,7 @@ tk.Entry(window).grid(row = 1, column = 1)
 tk.Checkbutton(window, text = "Keep Me Logged In").grid(columnspan = 2)
 
 btn1 = Button(Window, text = "Start", command = clicked)
-btn2 = Button(Window, text = "Stop", command = clickQuit).pack
+btn2 = Button(Window, text = "Stop", command = clickQuit).pack()
 
 combo = Combobox(window)
 combo['Values'] = ("10 min": 10, "20 min": 20, "30 min": 30, "40 min": 40, "50 min": 50, "60 min": 60)
@@ -27,12 +27,10 @@ def clickStart():
     btn1.configure(text = "")
 def clickQuit():
     response = tkt.messagebox.askquestion("Would you like to quit?\n If you quit now, no points will be awarded (Y, N)")
-    if str(response).upper() == "Y":
+    if response == 1:
         quit()
-    elif str(response).upper() == "N":
-        tkt.messagebox.showinfo("Alert Message", "You're back to progress!")
     else:
-        tkt.messagebox.showinfo("Alert", "Please respond with Y or N")
+        tkt.Label(window, text = "You're back to progress!")
 
 
 top.mainloop()
