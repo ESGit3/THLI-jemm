@@ -1,5 +1,4 @@
-from idlelib import window
-from tkinter import *
+import idlelib
 
 import pymongo
 import tkinter as tkt
