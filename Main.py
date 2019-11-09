@@ -53,3 +53,7 @@ def killProcess(taskName):
     os.system("taskkill /f /im " + taskName)
 
 killProcess(/Applications/Discord.app)
+
+
+
+mongodb+srv://jkska23:<password>@cluster0-ctd6l.mongodb.net/test?retryWrites=true&w=majority
