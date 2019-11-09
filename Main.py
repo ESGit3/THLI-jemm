@@ -4,7 +4,9 @@ from tkinter import *
 import pymongo
 import tkinter as tkt
 import time
+import os
 
+import tk as tk
 
 top = tkt.tk()
 window.title("Pomodoro")
@@ -26,10 +28,10 @@ btn2 = Button(Window, text = "Stop", command = clickQuit).pack()
 #combo.grid (column = 0, row = 0)
 
 #timer
-min = 25
+mins = 25
 def timer:
-    while mins != 0:
-        print ">>>>>>>>>>>>>>>>>>>>>", mins
+    while (mins != 0):
+        print (">>>>>>>>>>>>>>>>>>>>>" + mins)
         time.sleep(60)
         mins -= 1
 
@@ -45,3 +47,9 @@ def clickQuit():
 #calculator; we'll work on it later
 
 top.mainloop()
+
+#taskkill
+def killProcess(taskName):
+    os.system("taskkill /f /im " + taskName)
+
+killProcess(/Applications/Discord.app)
