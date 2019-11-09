@@ -36,12 +36,3 @@ def clickQuit():
 
 
 top.mainloop()
-
-
-
-
-
-
-
-window.mainloop()
-
