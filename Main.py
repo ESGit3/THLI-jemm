@@ -1,12 +1,12 @@
 from idlelib import window
 from tkinter import *
+from pymongo import MongoClient
 
 import pymongo
 import tkinter as tkt
 import time
 import os
 
-import tk as tk
 
 top = tkt.tk()
 window.title("Pomodoro")
