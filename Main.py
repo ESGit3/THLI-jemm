@@ -26,8 +26,9 @@ btn2 = Button(Window, text = "Stop", command = clickQuit).pack()
 #combo.grid (column = 0, row = 0)
 
 #timer
+min = 25
 def timer:
-    while mins != 25:
+    while mins != 0:
         print ">>>>>>>>>>>>>>>>>>>>>", mins
         time.sleep(60)
         mins -= 1
