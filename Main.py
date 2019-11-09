@@ -1,4 +1,5 @@
 from idlelib import window
+from tkinter import *
 
 import pymongo
 import tkinter as tkt
@@ -6,7 +7,7 @@ import time
 
 
 top = tkt.tk()
-window.title("Procrastination")
+window.title("Pomodoro")
 window.geometry('1250x350')
 
 #logins
@@ -19,9 +20,11 @@ tk.Checkbutton(window, text = "Keep Me Logged In").grid(columnspan = 2)
 btn1 = Button(Window, text = "Start", command = clicked)
 btn2 = Button(Window, text = "Stop", command = clickQuit).pack()
 
-combo = Combobox(window)
-combo['Values'] = ("10 min": 10, "20 min": 20, "30 min": 30, "40 min": 40, "50 min": 50, "60 min": 60)
-combo.grid (column = 0, row = 0)
+#combo = Combobox(window)
+#combo['Values'] = ("10 min": 10, "20 min": 20, "30 min": 30, "40 min": 40, "50 min": 50, "60 min": 60)
+#combo.grid (column = 0, row = 0)
+
+def clicked():
 
 def clickStart():
     btn1.configure(text = "")
@@ -32,5 +35,6 @@ def clickQuit():
     else:
         tkt.Label(window, text = "You're back to progress!")
 
+#calculator; we'll work on it later
 
 top.mainloop()
