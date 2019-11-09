@@ -17,14 +17,20 @@ passw = tk.Label(window, text = "Password").grid(row = 1)
 tk.Entry(window).grid(row = 1, column = 1)
 tk.Checkbutton(window, text = "Keep Me Logged In").grid(columnspan = 2)
 
-btn1 = Button(Window, text = "Start", command = clicked)
+
+btn1 = Button(Window, text = "Start", command = timer)
 btn2 = Button(Window, text = "Stop", command = clickQuit).pack()
 
 #combo = Combobox(window)
 #combo['Values'] = ("10 min": 10, "20 min": 20, "30 min": 30, "40 min": 40, "50 min": 50, "60 min": 60)
 #combo.grid (column = 0, row = 0)
 
-def clicked():
+#timer
+def timer:
+    while mins != 25:
+        print ">>>>>>>>>>>>>>>>>>>>>", mins
+        time.sleep(60)
+        mins -= 1
 
 def clickStart():
     btn1.configure(text = "")
