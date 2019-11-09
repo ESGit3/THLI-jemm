@@ -26,8 +26,15 @@ combo.grid (column = 0, row = 0)
 def clickStart():
     btn1.configure(text = "")
 def clickQuit():
-    btn2.configure(text = "Would you like to quit?\n If you quit now your points will not be awarded")
-    quit()
+    response = tkt.messagebox.askquestion("Would you like to quit?\n If you quit now, no points will be awarded (Y, N)")
+    if str(response).upper() == "Y":
+        quit()
+    elif str(response).upper() == "N":
+        tkt.messagebox.showinfo("Alert Message", "You're back to progress!")
+    else:
+        tkt.messagebox.showinfo("Alert", "Please respond with Y or N")
+
+
 top.mainloop()
 
 
