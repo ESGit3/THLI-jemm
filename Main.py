@@ -3,7 +3,8 @@ from idlelib import window
 import pymongo
 import tkinter as tkt
 import time
-import os
+
+
 
 #gui
 top = tkt.tk()
