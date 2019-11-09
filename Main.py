@@ -1,13 +1,12 @@
-from idlelib import window
 from tkinter import *
 from pymongo import MongoClient
 
 import pymongo
-import tkinter as tkt
+import tkinter as tk
 import time
 import os
 
-top = tkt.tk()
+top = tk()
 window.title("Pomodoro")
 window.geometry('1250x350')
 
