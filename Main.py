@@ -1,3 +1,6 @@
+import time
+import pymongo
+
 from kivy.app import App
 from kivy.uix.label import Label
 from kivy.uix.button import Button
@@ -5,17 +8,13 @@ from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
-from kivy.uix.floatlayout import FloatLayout
-from kivy.config import Config
-
-import time
-
+from pymongo import MongoClient
 
 # mongodb
-cluster = MongoClient("mongodb+srv://jkska23:<teenhacksdb>@cluster0-ctd6l.mongodb.net/test?retryWrites=true&w=majority")
+cluster = MongoClient("mongodb+srv://jkska23:<teenhacksdb>@cluster0-ctd6l.mongodb.net/test")
 
 db = cluster["teenhacks"]
-collection = db[""]
+collection = db["collection"]
 
 
 def viewScore():
@@ -31,28 +30,23 @@ def ucinfo(): #this is for changing info that i can work on later
         print("You can always access this information and change your information")
 
 #####
-Congi.set('graphics', 'resizable', True)
-class LoginScreen(FloatLayout):
+class LoginScreen(GridLayout):
 
-    def build(self):
-        layout = FloatLayout(size(300, 300))
-        btn = Button(text='User Name',
-                     pos_hint={'x': .1, 'y': .6},
-                     size_hint=(.5, .2))
-        btn2 = Button(text='Password',
-                      pos_hint={'x': .1, 'y': .4},
-                      size_hint=(.5, .2)
-                      )
-        layout.add_widget(btn)
-        layout.add_widget(btn2)
+    def __init__(self, **kwargs):
+        super(LoginScreen, self).__init__(**kwargs)
+        self.cols = 2
         self.add_widget(Label(text='User Name'))
         self.username = TextInput(multiline=False)
         self.add_widget(self.username)
         self.add_widget(Label(text='Password'))
         self.password = TextInput(password=True, multiline=False)
         self.add_widget(self.password)
-        post = {"user": self.username, "password": self.password}
-        user.insert_one(post)
+        post = {
+            "_id": 0,
+            "user": self.username,
+            "password": self.password
+        }
+        collection.insert_one(post)
 
 
 def timer():
@@ -81,6 +75,17 @@ def killProcess(taskName):
 killProcess("/Applications/Discord.app")
 
 
+#functions for buttons
+
+#this is for finding specific user
+def specificProfile():
+    results = collection.find({"user":})
+    for i in results:
+        print(i["score"])
+def allProfile():
+    results = collection.find({})
+    for i in results:
+        print(i)
 
 
 #
