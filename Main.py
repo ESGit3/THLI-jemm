@@ -1,14 +1,15 @@
 from kivy.app import App
+from kivy.uix.label import Label
 from kivy.uix.button import Button
 
-uscores = 0 #this will be the total points assigned per 25min and reset when user quits the program completely
 
-class TestApp(App):
-    @staticmethod
-    def build():
-        return Button(text='Hello World')
+class MyApp(App):
 
-TestApp().run()
+    def build(self):
+        return Label(text='Hello world')
+        return Button(text='this is a button')
+
+MyApp().run()
 
 
 # taskkill
@@ -32,12 +33,17 @@ def uinfo():
         upass = input("Enter your password: \n")
         post = {"_id": uid, "email": umail, "password": upass}
         user.insert_one(post)
+        print("Your account has been made!")
     else:
         print("You can sign in with your gmail to submit your points")
 
+def viewScore():
 
 
 
+    user.insert_one({"_id": bot1, "email": test1@gmail.com, "password": 12345, "score": 3})
+user.insert_one({"_id": bot2, "email": test2@gmail.com, "password": 12345, "score": 2})
+user.insert_one({"_id": bot3, "email": test3@gmail.com, "password": 12345, "score": 1})
 
 
 
