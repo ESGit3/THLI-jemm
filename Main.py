@@ -10,15 +10,6 @@ from kivy.uix.textinput import TextInput
 
 
 
-
-class MyApp(App):
-
-    def build(self):
-        return Label(text='Hello world')
-        return Button(text='this is a button')
-
-MyApp().run()
-
 class TestApp(App):
     @staticmethod
     def build():
@@ -32,15 +23,17 @@ class LoginScreen(GridLayout):
         self.add_widget(Label(text='User Name'))
         self.username = TextInput(multiline=False)
         self.add_widget(self.username)
-        self.add_widget(Label(text='password'))
+        self.add_widget(Label(text='Password'))
         self.password = TextInput(password=True, multiline=False)
         self.add_widget(self.password)
 
-btimer = Button (text="Start", font_size=14)
-btimer.bind(on_press=timer)
-
 def timer():
     print("stuff)")
+
+btimer = Button (text="Start", font_size=7)
+btimer.bind(on_press=timer)
+
+
 
 
 class MyApp(App):
