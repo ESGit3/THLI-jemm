@@ -64,7 +64,6 @@ killProcess("/Applications/Discord.app")
 
 
 
-
 # # i just put this here to make it easier for me to pull
 # # git pull https://github.com/ESGit3/THLI-jemm.git
 
