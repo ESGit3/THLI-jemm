@@ -52,3 +52,29 @@
 # top.mainloop()
 #
 #
+import pymongo
+from pymongo import MongoClient
+
+# mongodb
+cluster = MongoClient("mongodb+srv://jkska23:<teenhacksdb>@cluster0-ctd6l.mongodb.net/test")
+
+db = cluster["teenhacks"]
+collection = db["collection"]
+
+post = {
+            "_id": 0,
+            "user": self.username,
+            "password": self.password
+        }
+        collection.insert_one(post)
+
+
+#this is for finding specific user
+def specificProfile():
+    results = collection.find({"user"})
+    for i in results:
+        print(i["score"]) #instead of print, make it show i["score" in the GUI
+def allProfile():
+    results = collection.find({})
+    for i in results:
+        print(i) #intead of print make it show i in the GUI

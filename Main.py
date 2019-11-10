@@ -1,5 +1,4 @@
 import time
-import pymongo
 
 from kivy.app import App
 from kivy.uix.label import Label
@@ -8,18 +7,10 @@ from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
-from pymongo import MongoClient
-
-# mongodb
-cluster = MongoClient("mongodb+srv://jkska23:<teenhacksdb>@cluster0-ctd6l.mongodb.net/test")
-
-db = cluster["teenhacks"]
-collection = db["collection"]
 
 
 def viewScore():
     print("work on it")
-
 
 
 def ucinfo(): #this is for changing info that i can work on later
@@ -41,12 +32,6 @@ class LoginScreen(GridLayout):
         self.add_widget(Label(text='Password'))
         self.password = TextInput(password=True, multiline=False)
         self.add_widget(self.password)
-        post = {
-            "_id": 0,
-            "user": self.username,
-            "password": self.password
-        }
-        collection.insert_one(post)
 
 
 def timer():
@@ -77,21 +62,12 @@ killProcess("/Applications/Discord.app")
 
 #functions for buttons
 
-#this is for finding specific user
-def specificProfile():
-    results = collection.find({"user"})
-    for i in results:
-        print(i["score"]) #instead of print, make it show i["score" in the GUI
-def allProfile():
-    results = collection.find({})
-    for i in results:
-        print(i) #intead of print make it show i in the GUI
 
 
-#
-# existQ = collection.find({"name": bill})
-# for i in existQ:
-#     print(i["_id"])  # gives the ID of the user with name bill
 
 # # i just put this here to make it easier for me to pull
 # # git pull https://github.com/ESGit3/THLI-jemm.git
+
+
+
+
