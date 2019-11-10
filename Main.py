@@ -29,7 +29,6 @@ def ucinfo():  # this is for changing info that i can work on later
 
 #####
 class LoginScreenApp(App):
-
     # def submit(self, btn):
     #     self.add_widget(Label(text='info: ' + self.password.text))
     #
@@ -46,23 +45,29 @@ class LoginScreenApp(App):
     #     self.add_widget(submitBtn)
     #     submitBtn.bind(on_press=self.submit)
 
+    lbl1 = Label(text='Username',
+                 size_hint=(.2, .05),
+                 pos=(300, 800))
+    txt1 = TextInput(size_hint=(.8, .05),
+                     pos=(700, 800),
+                     text='',
+                     multiline=False)
+    lbl2 = Label(text='')
+    btn1 = Button(text="OK")
+
     def build(self):
         Fl = FloatLayout()
-        btn1 = Button(text="OK")
-        btn1.bind(on_press=self.buttonClicked)
-        Fl.add_widget(btn1)
-        self.lbl1 = Label(text='Username',
-                          size_hint=(.2, .05),
-                          pos=(300, 800))
-        Fl.add_widget(self.lbl1)
-        self.txt1 = TextInput(size_hint=(.8, .05),
-                              pos=(700, 800),
-                              text='',
-                              multiline=False)
-        Fl.add_widget(self.txt1)
 
-    def buttonClicked(self, btn):
-        self.lbl1.text = "You wrote " + self.txt1.text
+        btn1.bind(on_press=self.buttonClicked())
+
+        Fl.add_widget(btn1)
+        Fl.add_widget(lbl1)
+        Fl.add_widget(txt1)
+        Fl.add_widget(lbl2)
+        return Fl
+
+    def buttonClicked(self):
+        lbl2.text = "You wrote " + txt1.text
 
 
 # def timer():
@@ -81,7 +86,7 @@ class LoginScreenApp(App):
 class MyApp(App):
 
     def build(self):
-        return LoginScreen()
+        return LoginScreenApp()
 
 
 if __name__ == '__main__':
