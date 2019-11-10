@@ -27,38 +27,19 @@ def ucinfo():  # this is for changing info that i can work on later
         print("You can always access this information and change your information")
 
 
-#####
 class LoginScreenApp(App):
-    # def submit(self, btn):
-    #     self.add_widget(Label(text='info: ' + self.password.text))
-    #
-    # def __init__(self, **kwargs):
-    #     super(LoginScreen, self).__init__(**kwargs)
-    #     self.cols = 2
-    #     self.add_widget(Label(text='User Name'))
-    #     self.username = TextInput(multiline=False)
-    #     userInput = self.add_widget(self.username)
-    #     self.add_widget(Label(text='Password'))
-    #     self.password = TextInput(text='', multiline=False)
-    #     self.add_widget(self.password)
-    #     submitBtn = Button(text="Submit")
-    #     self.add_widget(submitBtn)
-    #     submitBtn.bind(on_press=self.submit)
-
-    lbl1 = Label(text='Username',
-                 size_hint=(.2, .05),
-                 pos=(300, 800))
-    txt1 = TextInput(size_hint=(.8, .05),
-                     pos=(700, 800),
-                     text='',
-                     multiline=False)
-    lbl2 = Label(text='')
-    btn1 = Button(text="OK")
-
     def build(self):
         Fl = FloatLayout()
-
-        btn1.bind(on_press=self.buttonClicked())
+        lbl1 = Label(text='Username',
+                     size_hint=(.2, .05),
+                     pos=(300, 800))
+        txt1 = TextInput(size_hint=(.8, .05),
+                         pos=(700, 800),
+                         text='',
+                         multiline=False)
+        lbl2 = Label(text='')
+        btn1 = Button(text="OK")
+        btn1.bind(on_press=self.buttonClicked)
 
         Fl.add_widget(btn1)
         Fl.add_widget(lbl1)
