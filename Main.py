@@ -42,7 +42,10 @@ class LoginScreen(GridLayout):
 
 
 def timer():
-    print("stuff")
+    t = 1500
+    while t > 0:
+        print(str(t//60) + " : " + str(1500%60))
+
 
 btimer = Button (text="Start", font_size=7)
 btimer.bind(on_press=timer)
