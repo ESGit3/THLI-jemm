@@ -1,19 +1,13 @@
-
 from kivy.app import App
 from kivy.uix.label import Label
-
 from kivy.uix.button import Button
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
 
+import time
 
-
-class TestApp(App):
-    @staticmethod
-    def build():
-        return Button(text='Hello World')
 ###
 class LoginScreen(GridLayout):
 
@@ -28,11 +22,10 @@ class LoginScreen(GridLayout):
         self.add_widget(self.password)
 
 def timer():
-    print("stuff)")
+    print("stuff")
 
 btimer = Button (text="Start", font_size=7)
 btimer.bind(on_press=timer)
-
 
 
 
@@ -45,7 +38,6 @@ class MyApp(App):
 if __name__ == '__main__':
     MyApp().run()
 ###
-TestApp().run()
 
 
 # taskkill
