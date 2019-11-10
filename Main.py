@@ -33,9 +33,11 @@ class LoginScreen(GridLayout):
         self.add_widget(Label(text='Password'))
         self.password = TextInput(password=True, multiline=False)
         self.add_widget(self.password)
-        x = '{"name":"John", "age":"30"}'
+        x = '{"name":"John", ' \
+            '"age":"30"}'
         y = json.loads(x)
-        self.add_widget(Label(text=))
+
+        self.add_widget(Label(text='info: ' + str(y)))
 
 
 
