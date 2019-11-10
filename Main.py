@@ -41,7 +41,11 @@ class LoginScreen(GridLayout):
         self.add_widget(Label(text='Password'))
         self.password = TextInput(password=True, multiline=False)
         self.add_widget(self.password)
-        post = {"user": self.username, "password": self.password}
+        post = {
+            "_id": 0
+            "user": self.username,
+            "password": self.password
+        }
         collection.insert_one(post)
 
 
