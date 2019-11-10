@@ -1,14 +1,19 @@
-from kivy import App
+import kivy
+
+from kivy.app import App
 from kivy.uix.button import Button
 
+import os
+import pymongo
 
 class TestApp(App):
     @staticmethod
     def build():
         return Button(text='Hello World')
 
-
 TestApp().run()
+
+
 # taskkill
 def killProcess(taskName):
     os.system("taskkill /f /im " + taskName)
