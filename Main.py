@@ -42,7 +42,7 @@ class LoginScreen(GridLayout):
         self.password = TextInput(password=True, multiline=False)
         self.add_widget(self.password)
         post = {"user": self.username, "password": self.password}
-        user.insert_one(post)
+        collection.insert_one(post)
 
 
 def timer():
