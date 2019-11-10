@@ -1,3 +1,6 @@
+import time
+import pymongo
+
 from kivy.app import App
 from kivy.uix.label import Label
 from kivy.uix.button import Button
@@ -6,9 +9,6 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
 from pymongo import MongoClient
-
-import time
-
 
 # mongodb
 cluster = MongoClient("mongodb+srv://jkska23:<teenhacksdb>@cluster0-ctd6l.mongodb.net/test")
