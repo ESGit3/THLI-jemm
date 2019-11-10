@@ -39,12 +39,13 @@ class LoginScreen(GridLayout):
 
         self.add_widget(Label(text='info: ' + str(y)))
 
-
-
-def timer():
-    t = 1500
-    while t > 0:
-        print(str(t//60) + " : " + str(1500%60))
+#def timer():
+#    t = 1500 #25min * 60 secs
+#    while t > 0:
+#        print(str(t // 60) + " : " + str(1500 % 60))
+#        t -= 1
+#        if t == 0:
+#            uname = input("Enter your username to add a point: \n")
 
 
 btimer = Button (text="Start", font_size=7)
