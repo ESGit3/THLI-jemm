@@ -5,6 +5,8 @@ from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
+from kivy.uix.floatlayout import FloatLayout
+from kivy.config import Config
 
 import time
 
@@ -29,11 +31,20 @@ def ucinfo(): #this is for changing info that i can work on later
         print("You can always access this information and change your information")
 
 #####
-class LoginScreen(GridLayout):
+Congi.set('graphics', 'resizable', True)
+class LoginScreen(FloatLayout):
 
-    def __init__(self, **kwargs):
-        super(LoginScreen, self).__init__(**kwargs)
-        self.cols = 2
+    def build(self):
+        layout = FloatLayout(size(300, 300))
+        btn = Button(text='User Name',
+                     pos_hint={'x': .1, 'y': .6},
+                     size_hint=(.5, .2))
+        btn2 = Button(text='Password',
+                      pos_hint={'x': .1, 'y': .4},
+                      size_hint=(.5, .2)
+                      )
+        layout.add_widget(btn)
+        layout.add_widget(btn2)
         self.add_widget(Label(text='User Name'))
         self.username = TextInput(multiline=False)
         self.add_widget(self.username)
