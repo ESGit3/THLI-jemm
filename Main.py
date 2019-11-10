@@ -79,7 +79,7 @@ killProcess("/Applications/Discord.app")
 
 #this is for finding specific user
 def specificProfile():
-    results = collection.find({"user":})
+    results = collection.find({"user"})
     for i in results:
         print(i["score"]) #instead of print, make it show i["score" in the GUI
 def allProfile():
