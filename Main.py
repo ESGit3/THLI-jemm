@@ -1,4 +1,5 @@
 import time
+import json
 
 from kivy.app import App
 from kivy.uix.label import Label
@@ -32,6 +33,8 @@ class LoginScreen(GridLayout):
         self.add_widget(Label(text='Password'))
         self.password = TextInput(password=True, multiline=False)
         self.add_widget(self.password)
+
+
 
 
 def timer():
