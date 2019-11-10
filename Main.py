@@ -40,7 +40,7 @@ btimer = Button (text="Start", font_size=14)
 btimer.bind(on_press=timer)
 
 def timer():
-
+    print("stuff)")
 
 
 class MyApp(App):
@@ -53,7 +53,6 @@ if __name__ == '__main__':
     MyApp().run()
 ###
 TestApp().run()
->>>>>>> ec7ecaf994aad914aa30300bc8a48a37f112f76b
 
 
 # taskkill
