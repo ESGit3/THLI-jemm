@@ -11,7 +11,7 @@ import time
 
 
 # mongodb
-cluster = MongoClient("mongodb+srv://jkska23:<teenhacksdb>@cluster0-ctd6l.mongodb.net/test?retryWrites=true&w=majority")
+cluster = MongoClient("mongodb+srv://jkska23:<teenhacksdb>@cluster0-ctd6l.mongodb.net/test")
 
 db = cluster["teenhacks"]
 collection = db[""]
