@@ -1,5 +1,5 @@
 import time
-import pymongo
+import json
 
 from kivy.app import App
 from kivy.uix.label import Label
@@ -8,26 +8,20 @@ from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
-from pymongo import MongoClient
-
-# mongodb
-cluster = MongoClient("mongodb+srv://jkska23:<teenhacksdb>@cluster0-ctd6l.mongodb.net/test")
-
-db = cluster["teenhacks"]
-collection = db["collection"]
+from kivy.properties import StringProperty
 
 
 def viewScore():
     print("work on it")
 
 
-
-def ucinfo(): #this is for changing info that i can work on later
+def ucinfo():  # this is for changing info that i can work on later
     q = input("Would you like to change your information?: (Y/N) \n")
     if q == "Y":
         print("something")
     else:
         print("You can always access this information and change your information")
+
 
 #####
 class LoginScreen(GridLayout):
@@ -37,24 +31,26 @@ class LoginScreen(GridLayout):
         self.cols = 2
         self.add_widget(Label(text='User Name'))
         self.username = TextInput(multiline=False)
-        self.add_widget(self.username)
+        userInput = self.add_widget(self.username)
         self.add_widget(Label(text='Password'))
-        self.password = TextInput(password=True, multiline=False)
+        self.password = TextInput(text='', multiline=False)
         self.add_widget(self.password)
-        post = {
-            "_id": 0,
-            "user": self.username,
-            "password": self.password
-        }
-        collection.insert_one(post)
+        submitBtn = Button(text="Submit")
+        self.add_widget(submitBtn)
+        submitBtn.bind(on_press=self.add_widget(Label(text='info: ' + self.password.text)))
 
 
-def timer():
-    print("stuff")
+# def timer():
+#    t = 1500 #25min * 60 secs
+#    while t > 0:
+#        print(str(t // 60) + " : " + str(1500 % 60))
+#        t -= 1
+#        if t == 0:
+#            uname = input("Enter your username to add a point: \n")
 
-btimer = Button (text="Start", font_size=7)
-btimer.bind(on_press=timer)
 
+# btimer = Button (text="Start", font_size=7)
+# btimer.bind(on_press=timer)
 
 
 class MyApp(App):
@@ -65,6 +61,8 @@ class MyApp(App):
 
 if __name__ == '__main__':
     MyApp().run()
+
+
 ######
 
 
@@ -72,26 +70,11 @@ if __name__ == '__main__':
 def killProcess(taskName):
     os.system("taskkill /f /im " + taskName)
 
+
 killProcess("/Applications/Discord.app")
 
+# functions for buttons
 
-#functions for buttons
-
-#this is for finding specific user
-def specificProfile():
-    results = collection.find({"user"})
-    for i in results:
-        print(i["score"]) #instead of print, make it show i["score" in the GUI
-def allProfile():
-    results = collection.find({})
-    for i in results:
-        print(i) #intead of print make it show i in the GUI
-
-
-#
-# existQ = collection.find({"name": bill})
-# for i in existQ:
-#     print(i["_id"])  # gives the ID of the user with name bill
 
 # # i just put this here to make it easier for me to pull
 # # git pull https://github.com/ESGit3/THLI-jemm.git
