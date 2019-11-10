@@ -42,7 +42,7 @@ class LoginScreen(GridLayout):
         self.password = TextInput(password=True, multiline=False)
         self.add_widget(self.password)
         post = {
-            "_id": 0
+            "_id": 0,
             "user": self.username,
             "password": self.password
         }
