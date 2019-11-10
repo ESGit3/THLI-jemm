@@ -8,7 +8,27 @@ from kivy.uix.textinput import TextInput
 
 import time
 
-###
+
+# mongodb
+cluster = MongoClient("mongodb+srv://jkska23:<teenhacksdb>@cluster0-ctd6l.mongodb.net/test?retryWrites=true&w=majority")
+
+db = cluster["teenhacks"]
+collection = db[""]
+
+
+def viewScore():
+    print("work on it")
+
+
+
+def ucinfo(): #this is for changing info that i can work on later
+    q = input("Would you like to change your information?: (Y/N) \n")
+    if q == "Y":
+        print("something")
+    else:
+        print("You can always access this information and change your information")
+
+#####
 class LoginScreen(GridLayout):
 
     def __init__(self, **kwargs):
@@ -40,7 +60,7 @@ class MyApp(App):
 
 if __name__ == '__main__':
     MyApp().run()
-###
+######
 
 
 # taskkill
@@ -49,24 +69,6 @@ def killProcess(taskName):
 
 killProcess("/Applications/Discord.app")
 
-# mongodb
-cluster = MongoClient("mongodb+srv://jkska23:<teenhacksdb>@cluster0-ctd6l.mongodb.net/test?retryWrites=true&w=majority")
-
-db = cluster["teenhacks"]
-collection = db[""]
-
-
-def viewScore():
-    print("work on it")
-
-
-
-def ucinfo(): #this is for changing info that i can work on later
-    q = input("Would you like to change your information?: (Y/N) \n")
-    if q == "Y":
-        print("something")
-    else:
-        print("You can always access this information and change your information")
 
 
 
