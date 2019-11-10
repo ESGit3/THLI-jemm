@@ -75,6 +75,13 @@ def killProcess(taskName):
 killProcess("/Applications/Discord.app")
 
 
+#functions for buttons
+def personProfile():
+    result = collection.find({"user":})
+def allProfile():
+    results = collection.find({})
+    for i in results:
+        print(i)
 
 
 #
