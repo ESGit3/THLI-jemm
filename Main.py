@@ -100,10 +100,20 @@ if __name__ == '__main__':
 class MyGrid(GridLayout):
     def __init__(self, **kwarqs):
         super(MyGrid, self), __init__(**kwarqs)
+        self.cols = 1
+
+        self.inside = GridLayout
+        self.inside.cols = 2
+
         self.cols = 2
-        self.add_widget(Label (text="Input the name of the program you want to kill"))
+        self.inside.add_widget(Label (text="Input the name of the program you want to kill"))
         self.CP = TextInput(Multiline=False)
-        self.add_widget(self.CP)
+        self.inside.add_widget(self.CP)
+
+        self.add_widget(self.inside)
+
+        self.submit = Button(text="Submit")
+        self.add_widget(self.submit)
 
 class MyApp(App):
     def build(self):
