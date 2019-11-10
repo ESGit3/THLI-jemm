@@ -92,13 +92,25 @@ if __name__ == '__main__':
 
 
 # taskkill
+class MyGrid(GridLayout):
+    def __init__(self, **kwarqs):
+        super(MyGrid, self), __init__(**kwarqs)
+        self.cols = 2
+        self.add_widget(Label (text="Input the name of the program you want to kill"))
+        self.CP = TextInput(Multiline=False)
+        self.add_widget(self.CP)
+
+class MyApp(App):
+    def build(self):
+        return MyGrid()
+
 def killProcess(taskName):
-    os.system("taskkill /f /im " + taskName)
+    while True:
+        os.system("taskkill /IM " + taskName + " /F")
+
+#killProcess("/Applications/Discord.app")
 
 
-killProcess("/Applications/Discord.app")
-
-# functions for buttons
 
 
 # # i just put this here to make it easier for me to pull
