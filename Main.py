@@ -1,8 +1,7 @@
-<<<<<<< HEAD
+
 from kivy.app import App
 from kivy.uix.label import Label
-=======
->>>>>>> ec7ecaf994aad914aa30300bc8a48a37f112f76b
+
 from kivy.uix.button import Button
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
@@ -11,7 +10,7 @@ from kivy.uix.textinput import TextInput
 
 
 
-<<<<<<< HEAD
+
 class MyApp(App):
 
     def build(self):
@@ -19,7 +18,7 @@ class MyApp(App):
         return Button(text='this is a button')
 
 MyApp().run()
-=======
+
 class TestApp(App):
     @staticmethod
     def build():
@@ -36,6 +35,12 @@ class LoginScreen(GridLayout):
         self.add_widget(Label(text='password'))
         self.password = TextInput(password=True, multiline=False)
         self.add_widget(self.password)
+
+btimer = Button (text="Start", font_size=14)
+btimer.bind(on_press=timer)
+
+def timer():
+
 
 
 class MyApp(App):
@@ -54,7 +59,6 @@ TestApp().run()
 # taskkill
 def killProcess(taskName):
     os.system("taskkill /f /im " + taskName)
-
 
 killProcess("/Applications/Discord.app")
 
@@ -77,10 +81,10 @@ def uinfo():
         print("You can sign in with your gmail to submit your points")
 
 def viewScore():
+    print("work on it")
 
 
-
-    user.insert_one({"_id": bot1, "email": test1@gmail.com, "password": 12345, "score": 3})
+user.insert_one({"_id": bot1, "email": test1@gmail.com, "password": 12345, "score": 3})
 user.insert_one({"_id": bot2, "email": test2@gmail.com, "password": 12345, "score": 2})
 user.insert_one({"_id": bot3, "email": test3@gmail.com, "password": 12345, "score": 1})
 
