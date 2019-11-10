@@ -76,8 +76,12 @@ killProcess("/Applications/Discord.app")
 
 
 #functions for buttons
-def personProfile():
-    result = collection.find({"user":})
+
+#this is for finding specific user
+def specificProfile():
+    results = collection.find({"user":})
+    for i in results:
+        print(i["score"])
 def allProfile():
     results = collection.find({})
     for i in results:
