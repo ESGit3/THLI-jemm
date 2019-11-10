@@ -1,8 +1,17 @@
+<<<<<<< HEAD
 from kivy.app import App
 from kivy.uix.label import Label
+=======
+>>>>>>> ec7ecaf994aad914aa30300bc8a48a37f112f76b
 from kivy.uix.button import Button
+from kivy.app import App
+from kivy.uix.gridlayout import GridLayout
+from kivy.uix.label import Label
+from kivy.uix.textinput import TextInput
 
 
+
+<<<<<<< HEAD
 class MyApp(App):
 
     def build(self):
@@ -10,6 +19,36 @@ class MyApp(App):
         return Button(text='this is a button')
 
 MyApp().run()
+=======
+class TestApp(App):
+    @staticmethod
+    def build():
+        return Button(text='Hello World')
+###
+class LoginScreen(GridLayout):
+
+    def __init__(self, **kwargs):
+        super(LoginScreen, self).__init__(**kwargs)
+        self.cols = 2
+        self.add_widget(Label(text='User Name'))
+        self.username = TextInput(multiline=False)
+        self.add_widget(self.username)
+        self.add_widget(Label(text='password'))
+        self.password = TextInput(password=True, multiline=False)
+        self.add_widget(self.password)
+
+
+class MyApp(App):
+
+    def build(self):
+        return LoginScreen()
+
+
+if __name__ == '__main__':
+    MyApp().run()
+###
+TestApp().run()
+>>>>>>> ec7ecaf994aad914aa30300bc8a48a37f112f76b
 
 
 # taskkill
