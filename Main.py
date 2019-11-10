@@ -20,6 +20,9 @@ class LoginScreen(GridLayout):
         self.add_widget(Label(text='Password'))
         self.password = TextInput(password=True, multiline=False)
         self.add_widget(self.password)
+        post = {"user": self.username, "password": self.password}
+        user.insert_one(post)
+
 
 def timer():
     print("stuff")
@@ -52,29 +55,13 @@ cluster = MongoClient("mongodb+srv://jkska23:<teenhacksdb>@cluster0-ctd6l.mongod
 db = cluster["teenhacks"]
 collection = db[""]
 
-def uinfo():
-    q = input("Would you like to sign up?: (Y/N) \n")
-    if q == "Y":
-        uid = input("Enter your nickname: \n")
-        umail = input("Enter your email: \n")
-        upass = input("Enter your password: \n")
-        post = {"_id": uid, "email": umail, "password": upass}
-        user.insert_one(post)
-        print("Your account has been made!")
-    else:
-        print("You can sign in with your gmail to submit your points")
 
 def viewScore():
     print("work on it")
 
 
-user.insert_one({"_id": bot1, "email": test1@gmail.com, "password": 12345, "score": 3})
-user.insert_one({"_id": bot2, "email": test2@gmail.com, "password": 12345, "score": 2})
-user.insert_one({"_id": bot3, "email": test3@gmail.com, "password": 12345, "score": 1})
 
-
-
-def ucinfo(): #this is for chaning into that i can work on later
+def ucinfo(): #this is for changing info that i can work on later
     q = input("Would you like to change your information?: (Y/N) \n")
     if q == "Y":
         print("something")
